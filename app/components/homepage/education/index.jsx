@@ -1,12 +1,15 @@
 // @flow strict
 import Image from "next/image";
-
+import dynamic from 'next/dynamic';
 import { educations } from "@/utils/data/educations";
 import { BsPersonWorkspace } from "react-icons/bs";
 import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
+//import GlowCard from "../../helper/glow-card";
 import lottieFile from '/public/lottie/study.json';
-
+const GlowCard = dynamic(
+  () => import('../../helper/glow-card'),
+  { ssr: false }
+)
 function Education() {
   return (
     <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">

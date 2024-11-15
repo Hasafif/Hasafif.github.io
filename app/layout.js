@@ -6,7 +6,12 @@ import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
-import ScrollToTop from "./components/helper/scroll-to-top";
+import dynamic from 'next/dynamic';
+//import ScrollToTop from "./components/helper/scroll-to-top";
+const ScrollToTop = dynamic(
+  () => import('./components/helper/scroll-to-top'),
+  { ssr: false }
+)
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
