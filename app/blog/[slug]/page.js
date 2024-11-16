@@ -21,5 +21,13 @@ async function BlogDetails({params}) {
     </div>
   );
 };
+// app/blog/[slug]/page.tsx
+export async function generateStaticParams() {
+  // This could be from a CMS, database, filesystem, etc.
+  const slug = params.slug;
+  const blog = await getBlog(slug);
+ 
+  return blog;
+}
 
 export default BlogDetails;

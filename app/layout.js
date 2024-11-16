@@ -7,6 +7,8 @@ import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
 import dynamic from 'next/dynamic';
+
+
 //import ScrollToTop from "./components/helper/scroll-to-top";
 const ScrollToTop = dynamic(
   () => import('./components/helper/scroll-to-top'),
