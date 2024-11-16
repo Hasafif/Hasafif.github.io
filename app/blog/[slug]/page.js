@@ -22,7 +22,7 @@ async function BlogDetails({params}) {
   );
 };
 // app/blog/[slug]/page.tsx
-export async function generateStaticParams() {
+export async function generateStaticParams({params}) {
   // This could be from a CMS, database, filesystem, etc.
   const slug = params.slug;
   const blog = await getBlog(slug);
